@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="jiliguagua blog code">
-    <meta name="description" content="1. 草稿相当于很多博客都有的“私密文章功能”  
+    <meta name="description" content="DOM获取元素
+根据ID获取
 
-会在$ hexo new draft &amp;quot;new draft&amp;quot;
-
-">
+document.getElementById() 	参数：string：id  return：object
+document &amp;#x2F; element.getElementsByClassName()	">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-22
+                    2022-06-23
                 </div>
                 
 
@@ -470,10 +470,772 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>1. 草稿相当于很多博客都有的“私密文章功能”</strong>  </p>
-<ul>
-<li>会在<br><code>$ hexo new draft &quot;new draft&quot;</code></li>
+                <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><ul>
+<li><p><strong>根据ID获取</strong></p>
+<blockquote>
+<p>document.getElementById() 	参数：string：id  return：object</p>
+<p>document &#x2F; element.getElementsByClassName()	参数：string return：object</p>
+<p>document &#x2F; element.getElementsByTagName()	参数：string：id  return：object</p>
+<p>document.getElementsByName()	参数：string：id  return：object</p>
+<p>document &#x2F; element.querySelector()	参数：string</p>
+<p>document &#x2F; element.querySelectorAll()	参数：string</p>
+</blockquote>
+</li>
+<li><p>通过HTML5新增的方法获取</p>
+</li>
+<li><p><strong>特殊元素获取</strong></p>
+<blockquote>
+<p>document.documentElement</p>
+<p>document.head</p>
+<p>document.body</p>
+</blockquote>
+</li>
 </ul>
+<h4 id="操作属性"><a href="#操作属性" class="headerlink" title="操作属性"></a>操作属性</h4><p>  元素的属性：原生属性、自定义属性、H5 自定义属性</p>
+<p>  <strong>原生属性</strong></p>
+<blockquote>
+<p>语法：元素.属性名</p>
+<blockquote>
+<p>读：元素.属性名</p>
+<p>写：元素.属性名 &#x3D; ‘值’</p>
+</blockquote>
+<p>注意：class除外，操作 类名使用 元素.className &#x3D; 值</p>
+</blockquote>
+<p>  <strong>自定义属性</strong></p>
+<blockquote>
+<p>不能直接点语法操作</p>
+<p>三个方法</p>
+<blockquote>
+<ol>
+<li><p>setAttribute(‘属性名’,’值’)</p>
+</li>
+<li><p>getAttribute(‘属性名’)</p>
+</li>
+<li><p>removeAttribute(‘属性名’)</p>
+</li>
+</ol>
+</blockquote>
+<p>特点：1.也可操作原生属性、H5 自定义属性 2.不管设置什么数据类型，从标签上拿到的都是字符串</p>
+</blockquote>
+<p>  <strong>H5 自定义属性</strong></p>
+<blockquote>
+<p>每一个元素身上有一个类Object属性叫做 dataset</p>
+<p>里面包含了所有H5 自定义属性</p>
+<p>操作 H5自定义属性：直接在dataset里面进行操作就可以</p>
+<p>获取、设置</p>
+<blockquote>
+<p>元素.dataset.名字。名字 ：data-名字</p>
+</blockquote>
+<p>删除</p>
+<blockquote>
+<p>delete 元素.dataset.名字</p>
+</blockquote>
+</blockquote>
+<h4 id="操作元素类名"><a href="#操作元素类名" class="headerlink" title="操作元素类名"></a>操作元素类名</h4><ol>
+<li><p>按照原生属性操作</p>
+<p>设置类名</p>
+<blockquote>
+<p>div.className &#x3D; ‘值’</p>
+</blockquote>
+<p>修改类名</p>
+<blockquote>
+<p>元素.className &#x3D; ‘新值’</p>
+</blockquote>
+<p>追加类名</p>
+<blockquote>
+<p>元素.className +&#x3D; “ 新类名”</p>
+<p>注意：新类名前必须要有一个空格，不然就变成修改了</p>
+</blockquote>
+<p>删除类名</p>
+<p>方法1</p>
+<blockquote>
+<ul>
+<li>获取类名</li>
+<li>截取字符串</li>
+<li>按照空格切开，循环遍历，找到一个想要删除的然后删除掉</li>
+<li>再写一遍</li>
+</ul>
+</blockquote>
+<p>方法2：H5提供的API</p>
+<blockquote>
+<p>元素身上有一个属性：classList</p>
+<p>里面包含了所有元素身上设置的类名</p>
+<p>classList提供了一系列方法来操作</p>
+<ul>
+<li><p>add()</p>
+<p>语法：元素.classList.add(‘你想要添加的类名’)</p>
+</li>
+<li><p>remove()</p>
+<p>语法：元素.classList.remove(‘你要移除的类名’)</p>
+</li>
+<li><p>toggle()</p>
+<p>语法：元素.classList.toggle(‘你要切换的类名’)</p>
+<p>当元素有这个类名时，就删除</p>
+<p>当元素没有类名时，就添加</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="操作元素文本内容"><a href="#操作元素文本内容" class="headerlink" title="操作元素文本内容"></a>操作元素文本内容</h4><ul>
+<li><p>innerHTML</p>
+<blockquote>
+<p>读写属性</p>
+<p>操作元素的超文本内容</p>
+<p>读：获取元素内部的所有内容</p>
+<blockquote>
+<p>文本+标签 全部内容</p>
+<p>以字符串形式返回</p>
+<p>语法：元素.innerHTML</p>
+</blockquote>
+<p>写：设置元素内部的超文本内容</p>
+<blockquote>
+<p>完全覆盖式的书写</p>
+<p>语法：元素.innerHTML &#x3D; ‘内容’</p>
+<p>当字符串里出现html结构时，自动解析</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>innerText</p>
+<p>读写属性</p>
+<p>操作元素的文本内容</p>
+<p>读：获取元素内部的所有文本内容</p>
+<blockquote>
+<p>包括子元素所有后代元素里的文本内容</p>
+<p>标签内容不获取</p>
+<p>语法：元素.innerText</p>
+</blockquote>
+<p>写：设置元素内部的文本内容</p>
+<blockquote>
+<p>完全覆盖式的写入</p>
+<p>语法：元素.innerText &#x3D; ‘你要设置的值’</p>
+<p>当你的字符串里面出现html结构的时候，不会自动解析原样输入</p>
+</blockquote>
+</li>
+<li><p>value</p>
+<p>读写值</p>
+<p>操作表单元素的value属性</p>
+<p>读：获取表单元素的value值</p>
+<p>写：设置表单元素的value值</p>
+</li>
+</ul>
+<h4 id="复选框全选"><a href="#复选框全选" class="headerlink" title="复选框全选"></a>复选框全选</h4><blockquote>
+<p>业务逻辑：</p>
+<ul>
+<li><p>点击全选按钮后</p>
+<p>若全选按钮是选中，则每一个选项按钮也选中</p>
+<p>若全选按钮未选中，则每一个选项按钮都是未选中</p>
+</li>
+<li><p>每一个选项按钮点击后</p>
+<p>若所有选项按钮都选中，则全选按钮选中</p>
+<p>若所有选项按钮未选中，则全选按钮未选中</p>
+</li>
+</ul>
+<p>代码：</p>
+<ol>
+<li><p>获取元素</p>
+<ul>
+<li>全选按钮</li>
+<li>所有选项按钮</li>
+</ul>
+</li>
+<li><p>给全选按钮添加一个点击事件</p>
+<p>获取全选按钮的选中状态</p>
+<p>使用checked原生属性</p>
+<p>循环遍历 选项按钮 ，设置每个按钮的checked 为 全选按钮的checked</p>
+</li>
+<li><p>给 每个选项按钮 都添加一个点击事件</p>
+<p>每一个按钮的点击，都需要判断所有选项按钮是否为选中状态</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><h6 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h6><blockquote>
+<p>number: 节点.nodeType</p>
+<blockquote>
+<p>元素节点：1，属性节点：2，文本节点：3，注释节点：8</p>
+</blockquote>
+<p>string: 节点.nodeName</p>
+<blockquote>
+<p>元素节点：（大写）标签名</p>
+<p>属性节点：属性名</p>
+<p>文本节点：#text</p>
+<p>注释节点：#comment</p>
+</blockquote>
+<p>string: 节点.nodeValue</p>
+<blockquote>
+<p>元素节点：无</p>
+<p>属性节点：属性值</p>
+<p>文本节点：文本内容</p>
+<p>注释节点：注释内容</p>
+</blockquote>
+</blockquote>
+<h4 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h4><blockquote>
+<p>parent</p>
+<blockquote>
+<p>节点 &#x3D; 元素.parentNode</p>
+<p>元素节点 &#x3D; 元素.parentElement</p>
+</blockquote>
+<p> sibling</p>
+<blockquote>
+<p>元素.previousSibling</p>
+<p>元素.previousElementSibling</p>
+<p>元素.nextSibling</p>
+<p>元素.nextElementSibling</p>
+</blockquote>
+<p>child</p>
+<blockquote>
+<p>元素.childElementCount</p>
+<p>元素.childNodes</p>
+<p>元素.children</p>
+<p>元素.firstChild  &#x2F; 元素.lastChild</p>
+<p>元素.firstElementChild &#x2F; 元素.lastElementChild</p>
+</blockquote>
+</blockquote>
+<h4 id="创建节点：create"><a href="#创建节点：create" class="headerlink" title="创建节点：create"></a>创建节点：create</h4><blockquote>
+<p>document.createElement(string:标签名)	注：标签名可以是（自己定义的）</p>
+<p>document.createAttribute(string:属性名)</p>
+<p>document.createTextNode(string: 文本内容)</p>
+<p>document.createcomment(string: 注释内容)</p>
+<p>document.createDocumentFragment()：创建文档碎片</p>
+</blockquote>
+<h4 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h4><blockquote>
+<p>元素.appendChild(节点：要添加的节点)</p>
+<p>元素.insertBefore(要添加的节点，添加节点之后的哪个节点)</p>
+</blockquote>
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><blockquote>
+<p>元素.removeChild(元素的子节点)</p>
+<p>节点.remove() </p>
+</blockquote>
+<h4 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h4><blockquote>
+<p>元素.replaceChild(替换节点，被替换节点)</p>
+</blockquote>
+<h4 id="克隆节点"><a href="#克隆节点" class="headerlink" title="克隆节点"></a>克隆节点</h4><blockquote>
+<p>节点 &#x3D; 节点.cloneNode(boolean：是否克隆所有后代节点)</p>
+</blockquote>
+<h4 id="文档碎片-筐"><a href="#文档碎片-筐" class="headerlink" title="文档碎片(筐)"></a>文档碎片(筐)</h4><p>用 JS 创建一个文档碎片 节点</p>
+<p>该节点可以承载节点</p>
+<p>当你把筐向页面元素添加的时候</p>
+<blockquote>
+<p>筐不会进入页面，而是把筐内的内容倒进去</p>
+<p>语法：document.createDocumentFragment()</p>
+</blockquote>
+<h4 id="获取元素尺寸"><a href="#获取元素尺寸" class="headerlink" title="获取元素尺寸"></a>获取元素尺寸</h4><blockquote>
+<ul>
+<li>元素的占地面积</li>
+<li>占地面积：border + padding + content</li>
+</ul>
+<p>两组方式：</p>
+<ol>
+<li><p>offsetWidth  和  offsetHeight</p>
+<blockquote>
+<p>元素.offsetWidth	：width + 2<em>padding + 2</em>border</p>
+<p>元素.offsetHeight   ：height + 2<em>padding + 2</em>border</p>
+<p>得到：元素的 border + padding + content</p>
+</blockquote>
+</li>
+<li><p>clientWidth  和  clientHeight</p>
+</li>
+</ol>
+<blockquote>
+<p>元素.clientWidth   ：width + 2*padding</p>
+<p>元素.clientHeight  ：height + 2*padding</p>
+<p>得到：元素的 padding + content</p>
+</blockquote>
+</blockquote>
+<h4 id="偏移量"><a href="#偏移量" class="headerlink" title="偏移量"></a>偏移量</h4><blockquote>
+<p>偏移量：一个元素相对参考系的位置</p>
+</blockquote>
+<ul>
+<li><p>offsetParent</p>
+<blockquote>
+<p>语法：元素.offsetParent</p>
+<p>作用：拿到该元素获取偏移量的时候的参考父级</p>
+<blockquote>
+<p>当你想给这个元素设置一个绝对定位的时候</p>
+<p>他会根据谁来定位，他的 offsetParent 就是谁	</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>offsetLeft  和  offsetTop</p>
+<blockquote>
+<p>语法：</p>
+<blockquote>
+<p>元素.offsetLeft</p>
+<p>元素.offsetTop</p>
+<p>得到：元素相对于参考父级的左边和上边的偏移量</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h4 id="获取浏览器尺寸"><a href="#获取浏览器尺寸" class="headerlink" title="获取浏览器尺寸"></a>获取浏览器尺寸</h4><p>BOM级别的获取</p>
+<blockquote>
+<p>innerWidth</p>
+<p>innerHeight</p>
+<p>拿到包含滚动条的尺寸</p>
+</blockquote>
+<p>DOM级别的获取</p>
+<blockquote>
+<p>document.documentElement.clientWidth</p>
+<p>document.documentElement.clientHeight</p>
+</blockquote>
+<h3 id="元素的常用事件"><a href="#元素的常用事件" class="headerlink" title="元素的常用事件"></a>元素的常用事件</h3><blockquote>
+<p>在 JavaScript 里， 事件分为几个大类</p>
+<ol>
+<li>鼠标事件</li>
+<li>键盘事件</li>
+<li>浏览器事件</li>
+<li>表单事件</li>
+<li>拖拽事件</li>
+<li>触摸事件(移动端)</li>
+<li>其它事件</li>
+</ol>
+</blockquote>
+<p>JS 所有 自带事件 没有大写字母</p>
+<h6 id="鼠标事件-注意加on"><a href="#鼠标事件-注意加on" class="headerlink" title="鼠标事件 ( 注意加on )"></a>鼠标事件 ( 注意加on )</h6><blockquote>
+<p>click、dblclick、contextmenu：左键单击、左键双击(包含两个单击)、右键单击</p>
+<p>mouseenter、mouseleave：鼠标 进入 或者 移出 该元素时触发，进入&#x2F;移出 其子元素时不会触发</p>
+<p>mouseover：鼠标 进入 该元素时触发，当鼠标 进入&#x2F;移出 其子元素时也触发</p>
+<p>mouseout：鼠标 移出 该元素时触发，当鼠标 进入&#x2F;移出 其子元素时也触发</p>
+<p>mousedown、mouseup：鼠标(左键、右键、侧键等)  按下&#x2F;抬起时触发</p>
+<p>mousemove：鼠标在元素内移动时触发</p>
+<p>mousewheel：鼠标在元素内滑动滚轮时触发</p>
+</blockquote>
+<h6 id="键盘事件-注意加on"><a href="#键盘事件-注意加on" class="headerlink" title="键盘事件 ( 注意加on )"></a>键盘事件 ( 注意加on )</h6><ul>
+<li>不是所有元素都能触发：输入时，不能判断是给哪个元素输入的</li>
+<li>表单元素：有选中效果，document：输入时在该文档里，window：输入时在这个窗口里</li>
+</ul>
+<blockquote>
+<p>keydown、keyup：键盘按下 &#x2F; 抬起，任何键都可以</p>
+<p>keypress ：</p>
+<blockquote>
+<p>当向文本框输入 可显示的某些字符 时触发</p>
+<ul>
+<li>输入中文相关 时不会触发</li>
+<li>输入英文相关 时总会触发</li>
+</ul>
+<p>enter、space会触发，backspace(删除键) 不能触发</p>
+</blockquote>
+<p>…</p>
+</blockquote>
+<h6 id="浏览器事件-注意加on"><a href="#浏览器事件-注意加on" class="headerlink" title="浏览器事件 ( 注意加on )"></a>浏览器事件 ( 注意加on )</h6><blockquote>
+<p>window.onload：页面加载完毕后</p>
+<p>window.onscroll：滚动条滚动</p>
+<p>window.onresize：窗口尺寸改变</p>
+<p>window.onoffline、window.ononline：网络断开、网络恢复</p>
+<p>window.onhashchange：哈希值改变</p>
+<p>…</p>
+</blockquote>
+<h6 id="表单事件-注意加on"><a href="#表单事件-注意加on" class="headerlink" title="表单事件 ( 注意加on )"></a>表单事件 ( 注意加on )</h6><blockquote>
+<p>表单事件绑定给 表单元素 和 form 标签</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>change：表单内容改变事件</li>
+</ul>
+<blockquote>
+<p>当（表单失焦）时，如果和聚焦的时候不一样，说明发生了变化，此时触发事件</p>
+<p>radio、checkbox 等 点击时自动触发</p>
+</blockquote>
+<ul>
+<li>input：表单输入事件</li>
+</ul>
+<blockquote>
+<p>当向表单输入内容时触发</p>
+<p>注：虽然也是键盘触发，但是和 keydown、keypress 都有所不同</p>
+<ul>
+<li>汉字在拼音输入时(即还没选定汉字时) 也会触发，选定汉字所按的 空格、数字 也会触发</li>
+<li>某些字符会触发两次</li>
+<li>space会触发(同keypress)，backspace也会触发(不同keypress)，enter直接提交了</li>
+</ul>
+</blockquote>
+<ul>
+<li>focus：表单聚焦</li>
+</ul>
+<blockquote>
+<p>注：radio、checkbox 也是点击时聚焦，点击外面时 失焦</p>
+</blockquote>
+<ul>
+<li><p>blur：表单失焦</p>
+</li>
+<li><p>submit：表单提交事件</p>
+</li>
+</ul>
+<blockquote>
+<p>注：这是绑定给 form 标签使用的</p>
+<p>当你点击 form 里面的 submit 时触发</p>
+</blockquote>
+<ul>
+<li>reset：表单重置事件</li>
+</ul>
+<blockquote>
+<p>注：这是绑定给 form 标签使用的</p>
+<p>当你点击 form 里面的 reset类型input 时触发</p>
+</blockquote>
+</blockquote>
+<h6 id="拖拽事件-注意加on"><a href="#拖拽事件-注意加on" class="headerlink" title="拖拽事件 ( 注意加on )"></a>拖拽事件 ( 注意加on )</h6><ul>
+<li><p>一般元素想要拖拽，需给元素添加 draggable&#x3D;’’true’’ 属性</p>
+</li>
+<li><p>需要两个元素完成一个完整的拖拽</p>
+<blockquote>
+<ol>
+<li>拖拽元素</li>
+<li>目标元素</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>dragstart：拖拽开始</li>
+</ul>
+<blockquote>
+<p>绑定给拖拽元素的</p>
+<p>点击元素时：没有触发拖拽开始</p>
+<p>点击后移动：触发</p>
+</blockquote>
+<ul>
+<li>drag：拖拽中</li>
+</ul>
+<blockquote>
+<p>绑定给拖拽元素的</p>
+<p>拖拽开始后立即触发</p>
+<p>即使拖拽时没有移动也在持续触发，移动时触发更多</p>
+</blockquote>
+<ul>
+<li>dragend：拖拽结束</li>
+</ul>
+<blockquote>
+<p>绑定给拖拽元素</p>
+<p>在处于 拖拽中 状态时松开鼠标左键即触发</p>
+</blockquote>
+<ul>
+<li>dragenter：拖拽进入目标</li>
+</ul>
+<blockquote>
+<p>绑定给目标元素</p>
+<p>某元素处于拖拽中时，当鼠标进入该元素触发</p>
+<p>是鼠标进入时触发，而不是拖拽的元素进入时</p>
+<p>在一个拖拽中状态可重复触发</p>
+</blockquote>
+<ul>
+<li>dragleave：拖拽离开目标</li>
+</ul>
+<blockquote>
+<p>绑定给目标元素</p>
+<p>某元素处于拖拽中时，当鼠标离开该元素触发</p>
+<p>是鼠标离开时触发，而不是拖拽的元素进入时</p>
+<p>在一个拖拽中状态可重复触发</p>
+</blockquote>
+<ul>
+<li>dragover：处于目标时的拖拽中</li>
+</ul>
+<blockquote>
+<p>绑定给目标元素</p>
+<p>类似 drag ，当 拖拽进入目标 触发时立即触发</p>
+<p>即使拖拽时没有移动也在持续触发，移动时触发更多</p>
+</blockquote>
+<ul>
+<li>drop：拖拽元素 在目标内 结束拖拽</li>
+</ul>
+<blockquote>
+<p>绑定给目标元素</p>
+<p>必须在 dragover 里阻止默认行为才能触发</p>
+</blockquote>
+</blockquote>
+<h6 id="触摸事件-注意加on"><a href="#触摸事件-注意加on" class="headerlink" title="触摸事件 ( 注意加on )"></a>触摸事件 ( 注意加on )</h6><blockquote>
+<p>只能在移动端使用</p>
+</blockquote>
+<ul>
+<li>touchstart：触摸开始</li>
+<li>touchmove：触摸移动</li>
+<li>touchend：触摸结束</li>
+</ul>
+<h6 id="其它事件-注意加on"><a href="#其它事件-注意加on" class="headerlink" title="其它事件 ( 注意加on )"></a>其它事件 ( 注意加on )</h6><ul>
+<li><p>transitionend：过渡结束</p>
+<blockquote>
+<p>当你有过渡属性的时候</p>
+<p>过渡结束触发，你过渡几个属性就触发几个属性</p>
+</blockquote>
+</li>
+<li><p>selectstart：开始选择</p>
+<blockquote>
+<p>当你想在页面中框选文档时触发</p>
+</blockquote>
+</li>
+<li><p>visibilitychange：窗口隐藏和显示</p>
+<blockquote>
+<p>只能绑定给 document</p>
+<p>离开、进入当前网页时触发</p>
+</blockquote>
+</li>
+</ul>
+<p>…</p>
+</li>
+</ol>
+<h5 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h5><blockquote>
+<p>什么是模板引擎 ?</p>
+<blockquote>
+<p>帮助我们快速渲染页面</p>
+<p>三体分离( 结构、样式、行为 -&gt; 分开 )</p>
+<p>在 JS 里使用元素.innerHTML 写了HTML，并不利于我们后期阅读、维护</p>
+<p>一般都是第三方文件引入使用，没有自己写来用的</p>
+</blockquote>
+<p>常见的模板引擎</p>
+<blockquote>
+<p>art-template</p>
+<blockquote>
+<p>前后端都可以用</p>
+</blockquote>
+<p>underscroll</p>
+<blockquote>
+<p>后端 JS 不能用，只能在前端 JS 用</p>
+</blockquote>
+<p>e.js</p>
+<blockquote>
+<p>后端 JS 不能用</p>
+</blockquote>
+<p>template</p>
+<blockquote>
+<p>art-template简化版</p>
+<p>后端 JS 不能用</p>
+</blockquote>
+</blockquote>
+<p>模板引擎特点</p>
+<blockquote>
+<p>html 结构和 JS 代码分离</p>
+<p>有自己独立的语法，但是也可以使用 JS 原生的语法</p>
+<p>有自己独立的渲染机制</p>
+</blockquote>
+<p>使用</p>
+<blockquote>
+<ol>
+<li>官网下载第三方文件：<a target="_blank" rel="noopener" href="http://aui.github.io/art-template/zh-cn/docs/index.html">http://aui.github.io/art-template/zh-cn/docs/index.html</a></li>
+<li>使用 script 标签的 src 属性引入</li>
+<li>按照官方规则来使用</li>
+</ol>
+</blockquote>
+<p>语法</p>
+<blockquote>
+<ol>
+<li><p>自己书写一个模板</p>
+<blockquote>
+<ul>
+<li>script 标签来定义模板</li>
+</ul>
+<blockquote>
+<p>从来不会给 script 标签添加样式</p>
+<p>script 标签里面书写的内容本身在页面上就不显示</p>
+</blockquote>
+<ul>
+<li>需要加一个 type 属性，值为 text&#x2F;html 或者 text&#x2F;template</li>
+</ul>
+<blockquote>
+<p>为什么要写 text&#x2F;html 或者 text&#x2F;template? : 为了在 script 中写标签时会有提示</p>
+<p>只要不写 text&#x2F;javascript ，script标签内容就不会被当作 JS 代码执行</p>
+</blockquote>
+<ul>
+<li>在这个 script 标签里面书写你的模板</li>
+</ul>
+</blockquote>
+</li>
+<li><p>在 JS 里面使用模板</p>
+<blockquote>
+<ul>
+<li><p>导入第三方文件</p>
+</li>
+<li><p>使用 window.template() 方法</p>
+<blockquote>
+<p>语法：template(模板标签 id 名，(选填)对象类型数据)</p>
+<blockquote>
+<p>id 名：必须是script标签的  id 名</p>
+<p>对象类型数据：在模板里使用的数据</p>
+</blockquote>
+<p>返回值：模板标签里面的 html 结构，是一个字符串</p>
+</blockquote>
+</li>
+<li><p>例子：</p>
+<blockquote>
+<p>let str &#x3D; template( ‘tmp’, { title: ‘one’ } )</p>
+<p>在模板里如果有 title 这个变量时，会自动渲染成字符串 ‘one’</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>在模板里使用的语法</p>
+<p>建议去官网查看：<a target="_blank" rel="noopener" href="http://aui.github.io/art-template/zh-cn/docs/index.html">http://aui.github.io/art-template/zh-cn/docs/index.html</a></p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul>
+<li>我们提前和浏览器约定好一些行为</li>
+<li>当用户在浏览器触发这些行为的时候，有一个事件处理函数执行</li>
+</ul>
+<blockquote>
+<p>原生事件</p>
+<p>自定义事件</p>
+</blockquote>
+<p>  <strong>事件三要素</strong></p>
+<ul>
+<li>事件源：在谁身上绑定事件</li>
+<li>事件类型：什么类型的事件</li>
+<li>事件处理函数：当行为发生的时候，执行哪一个函数</li>
+</ul>
+<p>  <strong>事件绑定分类</strong>：</p>
+<ul>
+<li>dom 0级事件<ul>
+<li>on … 形式</li>
+</ul>
+</li>
+<li>dom 2级事件   (dom 1级存在的时间很短就被废了)<ul>
+<li>事件监听</li>
+</ul>
+</li>
+</ul>
+<p>  <strong>事件的绑定</strong>：</p>
+<ol>
+<li><p>dom 0级 事件</p>
+<ul>
+<li><p>事件源.onclick&#x2F;… &#x3D; function() { }</p>
+<blockquote>
+<p>处理函数只能赋值一个，后来的会覆盖前面的</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>dom 2级 事件</p>
+<p>2-1. addEventListener()</p>
+<blockquote>
+<p>标准浏览器使用</p>
+<p>语法：事件源.addEventListener(‘事件类型’, 事件处理函数)	注：事件类型不需要 on</p>
+<p>可以同时给一个事件类型<strong>绑定多个事件处理函数</strong></p>
+<p>多个处理函数<strong>顺序绑定顺序执行</strong></p>
+<p>至少两个参数</p>
+</blockquote>
+<p>2-2. attachEvent()</p>
+<blockquote>
+<p>IE低版本使用</p>
+<p>语法：事件源.attachEvent(‘on事件类型’, 事件处理函数)</p>
+<p>多个处理函数<strong>顺序绑定倒序执行</strong></p>
+<p>只有两个参数</p>
+</blockquote>
+<p>同时有 dom0级事件 和 dom2级事件，则按<strong>定义的顺序</strong>执行</p>
+</li>
+</ol>
+<p>  <strong>事件的解绑</strong></p>
+<ul>
+<li><p>复杂数据类型存储的是<strong>该变量在堆里的地址</strong></p>
+<ol>
+<li><p>dom0级事件 解绑</p>
+<p>事件源.on事件类型 &#x3D; null</p>
+</li>
+<li><p>解绑 dom2级事件</p>
+<ul>
+<li>事件源.removeEventListener( ‘事件类型’, 要解绑的事件处理函数 )</li>
+</ul>
+<blockquote>
+<p> 向一个事件类型身上绑定多个事件处理函数时</p>
+<blockquote>
+<p>click: [ 事件处理函数1, 事件处理函数2, 事件处理函数3, … ]</p>
+</blockquote>
+<p> 行为触发时：找到对应的数组，然后循环遍历，依次执行</p>
+<p> 当解绑的时候，循环遍历，依次比较，找到相同的函数然后去除</p>
+<p> 如果想解绑事件，那么必须在绑定事件时 <strong>不使用匿名函数</strong></p>
+</blockquote>
+<ul>
+<li>事件源.detachEvent( ‘on事件类型’, 要解绑的事件处理函数 )</li>
+</ul>
+<blockquote>
+<p>IE 低版本</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p>  <strong>封装-&gt;事件绑定与解绑</strong></p>
+<ul>
+<li>为什么要封装？</li>
+</ul>
+<blockquote>
+<p>兼容问题</p>
+<p>使用方便</p>
+</blockquote>
+<ul>
+<li>封装需要几个参数 ？</li>
+</ul>
+<blockquote>
+<p>三个</p>
+<p>事件源， 事件类型， 事件处理函数</p>
+<p>on( div, ‘click’, function ( ) { } )</p>
+</blockquote>
+<ul>
+<li>手动抛出异常</li>
+</ul>
+<blockquote>
+<p>throw new Error( ‘错误信息’ )</p>
+</blockquote>
+<ul>
+<li>开始封装</li>
+</ul>
+<ol>
+<li><p>参数验证</p>
+<p>1-1. ele 必传，若没有传递，直接报错</p>
+<p>1-2. ele 需要是一个 元素节点</p>
+<ul>
+<li>节点类型，nodeType: 1</li>
+</ul>
+</li>
+<li><p>兼容处理</p>
+<p>2-1. if ( ) { } else { }</p>
+</li>
+</ol>
+<p>  <strong>事件对象</strong></p>
+<p>  当一个事件触发的时候，对本次事件的描述</p>
+<p>  例：</p>
+<p>  <em>客户</em></p>
+<blockquote>
+<p>当电话响起的时候，接起来，聊</p>
+<p>在接电话的时候，需要记录一些信息</p>
+<blockquote>
+<p>什么地方打来的</p>
+<p>说了什么事情</p>
+<p>需要什么帮助</p>
+<p>什么时间</p>
+<p>…</p>
+</blockquote>
+</blockquote>
+<p>  <em>点击行为</em></p>
+<blockquote>
+<p>当你在浏览器上触发点击行为的时候，要执行事件处理函数</p>
+<p>需要记录一些信息</p>
+<blockquote>
+<p>点击的哪个元素</p>
+<p>点击左边</p>
+<p>按下的是哪个键</p>
+<p>你当前触发的事件类型是什么</p>
+<p>…</p>
+</blockquote>
+</blockquote>
+<p>  如何获取事件对象</p>
+<ul>
+<li>标准浏览器</li>
+</ul>
+<blockquote>
+<p>直接在事件处理函数上接受一个形参</p>
+<p>会在事件触发的时候，由浏览器自动传递实参</p>
+<p>该形参只包含对这一次事件触发的描述信息</p>
+<p>也可使用 window.event</p>
+</blockquote>
+<ul>
+<li>IE低版本</li>
+</ul>
+<blockquote>
+<p>不需要接受形参</p>
+<p>直接使用 window.event</p>
+</blockquote>
+<p>  <em>需要我们自己书写一个兼容方式</em></p>
+<blockquote>
+<p>e &#x3D; e || window.event</p>
+</blockquote>
 
                 
             </div>
@@ -500,7 +1262,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiliguagua.github.io/2022/06/22/uncategorized/index.html">https://jiliguagua.github.io/2022/06/22/uncategorized/index.html</a>
+                    <a href="https://jiliguagua.github.io/2022/06/23/uncategorized/index.html">https://jiliguagua.github.io/2022/06/23/uncategorized/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -709,9 +1471,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/06/23/uncategorized/index.html">
                     <div class="card-image">
@@ -729,9 +1492,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -740,6 +1503,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -750,13 +1514,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/22/uncategorized/hello-world/index.html">
+                <a href="/2022/06/22/uncategorized/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
