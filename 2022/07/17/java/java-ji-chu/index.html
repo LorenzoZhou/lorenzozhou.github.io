@@ -630,6 +630,7 @@ Ctrl + W
     &lt;!--声明--&gt;
     Name ... = Name.value; 或者 Name ... = null;
 ```  
+
 注：枚举是种特殊的类，不能在`方法`中定义  
     可作为类的`属性`，也可在`类外`
     
@@ -644,11 +645,15 @@ Ctrl + W
     - 有float 转 `float`，否则
     - 有long 转 `long` ，否则
     - 转 `int`  
-- 强制类型转换  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+- 强制类型转换  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>(类型)变量名
 </code></pre>
-<pre class="line-numbers language-none"><code class="language-none">&gt; 只有极少数情况需要将`boolean`转换为数值类型  
-&gt; 可使用表达式 `true/false?1:0`
+<pre class="line-numbers language-none"><code class="language-none">
+&gt; 只有极少数情况需要将`boolean`转换为数值类型  
+&gt; 可使用表达式  
+
+`true/false?1:0`
 
 
 ## 常变量  
@@ -662,7 +667,8 @@ Ctrl + W
 - `Java10` 开始，  使用`var`  
 定义`局部变量`(不是类的属性) 可以从初始值推断其类型而不需要指明类型  
     - 必须是 `局部变量`
-    - `声明`和`初始化`在一起<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    - `声明`和`初始化`在一起  
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>    var aCar = new Car();  相当于 Car aCar = new Car();
     var c = true/false ? 123:"jiliguagua";
     // 相当于true：int c = 123;
@@ -698,7 +704,8 @@ Ctrl + W
     - 位移位  
     `&lt;&lt;` `&gt;&gt;` `&gt;&gt;&gt;`  
 - 赋值运算符  
-`=` `+=` `-=` `*=` `/=` `%=` `...`
+`=` `+=` `-=` `*=` `/=` `%=` `...`  
+
 &gt; 复合型赋值运算符隐含**强制类型转换**  
 
 - 运算符优先级  
@@ -711,7 +718,8 @@ Ctrl + W
 &gt; `C++`可以，子块的变量会覆盖父块
 
 - 分支  
-    - `if else`<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    - `if else`  
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     if () {
         
     } else if () {
@@ -719,13 +727,16 @@ Ctrl + W
     } else {
         
     }
-<pre class="line-numbers language-none"><code class="language-none">- `switch case`  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">
+- `switch case`    
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
     switch () {
         case 整型/char/String/enum: ...; break;
         ...
         default: ...
     }
-<pre class="line-numbers language-none"><code class="language-none">- 循环  
+<pre class="line-numbers language-none"><code class="language-none">    
+- 循环  
     - `while/do while`  
     do while 语句后有 `;`  
     `do {...} while ();`  
@@ -774,15 +785,20 @@ Java中不使用 `goto`语句
 
 - 增  
     1. s1 `+` s2  
-    2. `String.join()`  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    2. `String.join()`  
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
         String all = String.join(" / ", "S", "M", "L", "XL");  
         // all: "S / M / L / XL"
-    <pre class="line-numbers language-none"><code class="language-none">3. `repeat();`  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <pre class="line-numbers language-none"><code class="language-none">    
+3. `repeat();`  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
     String repeated = "Java".repeat(3);  
     // repeated: "JavaJavaJava"
-    <pre class="line-numbers language-none"><code class="language-none">4. 构建字符串：`StringBuilder`类  
+    <pre class="line-numbers language-none"><code class="language-none">    
+4. 构建字符串：`StringBuilder`类  
 由大量较短的字符串构建字符串，如按键或文件中的单词，使用`+`效率很低：每次拼接，都会创建一个新的String对象  
-应按以下步骤进行：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+应按以下步骤进行：  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
     StringBuilder builder = new StringBuilder(); // 创建空的字符串构造器
 
     builder.append(x)  
@@ -806,14 +822,18 @@ Java中不使用 `goto`语句
 一旦创建，就不能更改数组的**长度**  
 - 长度  
 `.length`
-- 创建数组  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+- 创建数组   
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 int[] arr = new int[length]; 
 method( new int[]{1,3,4,} );//匿名简写
 //标准形式与其他形式不可同时使用
-<pre class="line-numbers language-none"><code class="language-none">数组的数组：<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">
+数组的数组：  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 int[][] arr = new int [n1][n2]
 int[][]... arr = new int[][]{{...}, {...}} //匿名简写
-<pre class="line-numbers language-none"><code class="language-none">- 数组的初始化：  
+<pre class="line-numbers language-none"><code class="language-none">    
+- 数组的初始化：  
     整型：0  
     浮点型：0.0  
     boolean：false  
@@ -830,10 +850,12 @@ int[][]... arr = new int[][]{{...}, {...}} //匿名简写
 
 
 ## 数学函数  
-导入后，不需要前缀`Math`<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+导入后，不需要前缀`Math`  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 import static java.lang.Math.*;
 </code></pre>
-<pre class="line-numbers language-none"><code class="language-none">- 常量  
+<pre class="line-numbers language-none"><code class="language-none">
+- 常量  
 `Math.PI`  
 `Math.E`
 - 常用函数   
@@ -858,7 +880,8 @@ import static java.lang.Math.*;
 
 - 大数的创建  
 普通数值的转换：`BigInteger a = BigInteger.valueOf(100);`  
-对更大的数，使用字符串参数构建：  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+对更大的数，使用字符串参数构建：  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>BigInteger realBig = new BigInteger("7546454354354354353453543543576898761213")
 ```  
 </code></pre>
