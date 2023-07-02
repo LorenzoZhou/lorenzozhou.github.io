@@ -1,0 +1,1 @@
+import{H as e}from"./Header-d5fa44b8.js";import{o as a,c as t,a as r,k as o,F as c}from"./index-e83ac1fb.js";const l={__name:"About",setup(s){return(n,m)=>(a(),t(c,null,[r(e),o(" 关于 ")],64))}};export{l as default};
