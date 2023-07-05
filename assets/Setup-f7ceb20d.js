@@ -1,1 +1,0 @@
-import{H as o}from"./Header-d5fa44b8.js";import{i as a,o as n,c as s,a as e,F as r,d as c}from"./index-e83ac1fb.js";const _=c("div",null,"设置",-1),i={__name:"Setup",setup(l){return(m,p)=>{const t=a("el-button");return n(),s(r,null,[e(o),_,e(t)],64)}}};export{i as default};

@@ -1,0 +1,72 @@
+{
+  "id": "3844852",
+  "name": "仿壁纸网站",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8288820",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e83f",
+      "unicode_decimal": 59455
+    },
+    {
+      "icon_id": "8288959",
+      "name": "爱心",
+      "font_class": "aixin1",
+      "unicode": "e85c",
+      "unicode_decimal": 59484
+    },
+    {
+      "icon_id": "23413933",
+      "name": "主题壁纸",
+      "font_class": "zhutibizhi",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "76992",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "577382",
+      "name": "喜欢",
+      "font_class": "xihuan",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "629333",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "2076312",
+      "name": " 我的",
+      "font_class": "wode",
+      "unicode": "e8a0",
+      "unicode_decimal": 59552
+    },
+    {
+      "icon_id": "5387892",
+      "name": "首页_o",
+      "font_class": "shouye_o",
+      "unicode": "eb82",
+      "unicode_decimal": 60290
+    },
+    {
+      "icon_id": "8219242",
+      "name": "关于",
+      "font_class": "guanyu",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}
