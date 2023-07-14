@@ -11,7 +11,6 @@ const lovedPics = computed(()=> pics.data.filter(pic=> pic.loved))
 </script>
 
 <template>
-  <Header />
   <DogPics
     v-if="lovedPics.length"
     :pics="lovedPics"

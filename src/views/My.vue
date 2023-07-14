@@ -11,7 +11,6 @@ setTimeout(()=> {
 </script>
 
 <template>
-  <Header />
   <h2>我的</h2>
   <el-button type="primary" loading 
     v-if="isLoading">Loading</el-button>

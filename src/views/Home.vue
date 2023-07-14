@@ -27,7 +27,6 @@ function unlove(pic) {
 </script>
 
 <template>
-  <Header />
   <DogPics 
     :pics="pics.data"
     @love="love"

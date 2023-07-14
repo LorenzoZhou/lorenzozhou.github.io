@@ -5,7 +5,6 @@ import Header from '../components/Header.vue';
 </script>
 
 <template>
-  <Header />
   <div>设置</div>
 
   <el-button></el-button>

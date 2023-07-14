@@ -12,7 +12,6 @@ function queryPic() {
 
 </script>
 <template>
-    <Header />
     <div class="searchbox">
         <div class="search">
             <svg class="icon" aria-hidden="true">

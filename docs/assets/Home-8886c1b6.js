@@ -1,0 +1,1 @@
+import{u as a,o as t,c as u,a as r,E as n}from"./index-da3c709a.js";import{D as i}from"./DogPics-b1d5496a.js";const _={__name:"Home",setup(p){const s=a();let o=null;function c(e){s.love(e),o&&o.close(),o=n("love")}function l(e){s.unlove(e),o&&o.close(),o=n("unlove")}return(e,f)=>(t(),u(i,{pics:r(s).data,onLove:c,onUnlove:l},null,8,["pics"]))}};export{_ as default};
